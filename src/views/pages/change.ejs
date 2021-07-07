@@ -1,0 +1,40 @@
+<%- include("../partials/__head")%>
+    <div class="mt-2 mb-2 p-2 bg-warning rounded-pill text-dark">You will change this data</div>
+
+    <table class="table table-hover">
+        <thead class="table-dark">
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">
+                    <%= data[0].id%>
+                </th>
+                <td>
+                    <%= data[0].name%>
+                </td>
+                <td>
+                    <%= data[0].email%>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="card">
+        <h2 class="card-header bg-dark">Edit the client:
+            <%= data[0].name%>
+        </h2>
+        <div class="card-body">
+            <form action="/change/<%=data[0].id%>" method="post">
+                <div class="form-group">
+                    <input type="text" placeholder="New name" name="name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="New email" name="email" class="form-control mt-2">
+                </div>
+                <input type="submit" value="CHANGE" class="btn btn-primary mt-2">
+            </form>
+        </div>
+    </div>
+    <%- include("../partials/__food")%>;
